@@ -51,7 +51,7 @@ export const Button = styled.button`
 
 export const ErrorMsg = styled.span`
   display: block;
-  font-size: 0.65rem;
+  font-size: 2rem;
   color: red;
   font-weight: 600;
   margin-top: 1rem;
