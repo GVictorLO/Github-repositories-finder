@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import axios from "axios";
 
 function App() {
+  const [usuario, setUsuario] = useState("");
+
+  function handlePesquisa() {
+    axios
+      .get(`https://api.github.com/users/${usuario}/repos`)
+      .then((response) => console.log(response.data));
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Primeiro projetinho react</h1>
+      <button type="button" onClick={handlePesquisa}>
+        Buscar
+      </button>
+      <input
+        name="usuario"
+        className="usuario"
+        id="usuario"
+        type="text"
+        placeholder="Nome de usuário"
+        onChange={(e) => setUsuario(e.target.value)}
+      ></input>
+    </>
   );
 }
-
 export default App;
+// essa jeito de lidar com o evento na propriedade onCahnge,
+// que vai mudar o valor do usuario de fato
