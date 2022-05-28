@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import * as S from "./styled";
+// import { useNavigate } from "react-router-dom";
 
 function HomeApp() {
   const [usuario, setUsuario] = useState("");
@@ -11,6 +12,7 @@ function HomeApp() {
       .then((response) => {
         const repositories = response.data;
         const repositoriesName = [];
+
         repositories.map((repository) => {
           repositoriesName.push(repository.name);
         });
@@ -28,10 +30,8 @@ function HomeApp() {
         <h2>Digite o nome de usuario que deseja ver os repositórios</h2>
         <S.Content>
           <S.Input
-            name="usuario"
             className="usuario"
             id="usuario"
-            type="text"
             placeholder="Nome de usuário"
             onChange={(e) => setUsuario(e.target.value)}
           ></S.Input>
