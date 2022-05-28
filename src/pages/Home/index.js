@@ -8,12 +8,24 @@ function HomeApp() {
   function handlePesquisa() {
     axios
       .get(`https://api.github.com/users/${usuario}/repos`)
-      .then((response) => console.log(response.data));
+      .then((response) => {
+        const repositories = response.data;
+        const repositoriesName = [];
+        repositories.map((repository) => {
+          repositoriesName.push(repository.name);
+        });
+        localStorage.setItem(
+          "repositoriesName",
+          JSON.stringify(repositoriesName)
+        );
+      });
   }
 
   return (
     <>
+      <S.Title>Bem vindo ao buscador de repositórios no Github</S.Title>
       <S.HomeContainer>
+        <h2>Digite o nome de usuario que deseja ver os repositórios</h2>
         <S.Content>
           <S.Input
             name="usuario"
