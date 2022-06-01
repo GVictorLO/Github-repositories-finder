@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import * as S from "./styled";
 import { useNavigate } from "react-router-dom";
+import LogoSrc from "./LogoGitHub.png";
 
 function HomeApp() {
   const navigate = useNavigate();
@@ -34,6 +35,7 @@ function HomeApp() {
     <>
       <S.Title>Bem vindo ao buscador de repositórios no Github</S.Title>
       <S.HomeContainer>
+        <S.HomeLogo src={LogoSrc} />
         <h2>Digite o nome de usuario que deseja ver os repositórios</h2>
         <S.Content>
           <S.Input

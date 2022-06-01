@@ -49,6 +49,15 @@ export const Button = styled.button`
   }
 `;
 
+export const HomeLogo = styled.img`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 362px;
+  aspect-ratio: auto 362 / 204;
+  height: 204px;
+`;
+
 export const ErrorMsg = styled.span`
   display: block;
   font-size: 2rem;
