@@ -14,6 +14,17 @@ export const Title = styled.h1`
   color: white;
 `;
 
+export const SubTitle = styled.h1`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: sans-serif;
+  color: white;
+  width: 300px;
+  height: 200px;
+`;
+
 export const List = styled.ul`
   list-style: none;
   padding: 0;
@@ -48,25 +59,13 @@ export const PerfilContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 204px;
+  height: 210px;
+  width: 1000px;
 `;
 
 export const ImgPerfil = styled.img`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 362px;
-  background-color: transparent;
   aspect-ratio: auto 362 / 204;
-  height: 204px;
-  border: 2px solid #;
-`;
-
-export const PerfilBar = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 500px;
   height: 204px;
   border: 2px solid #;
 `;

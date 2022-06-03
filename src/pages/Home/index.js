@@ -17,7 +17,7 @@ function HomeApp() {
         const repositoriesName = [];
 
         repositories.map((repository) => {
-          repositoriesName.push(repository.name);
+          return repositoriesName.push(repository.name);
         });
         localStorage.setItem(
           "repositoriesName",
@@ -29,16 +29,20 @@ function HomeApp() {
       .catch((err) => {
         setErro(true);
       });
+  }
 
-    localStorage.setItem("usuarioName", usuario);
+  function handleUser() {
+    axios.get(`https://api.github.com/users/${usuario}`).then((response) => {
+      const userData = response.data;
+      const imgPerfilAdress = userData.avatar_url;
+      localStorage.setItem("imagemPerfil", imgPerfilAdress);
+      localStorage.setItem("userName", usuario);
+    });
+  }
 
-    axios
-      .get(`https://avatars.githubusercontent.com/${usuario}/2?v=4`)
-      .then((response) => {
-        const fotoUsuario = response.data;
-
-        localStorage.setItem("fotoUsuairo", fotoUsuario);
-      });
+  function handleClick() {
+    handlePesquisa();
+    handleUser();
   }
 
   return (
@@ -56,7 +60,7 @@ function HomeApp() {
             placeholder="Nome de usuário"
             onChange={(e) => setUsuario(e.target.value)}
           ></S.Input>
-          <S.Button type="button" onClick={handlePesquisa}>
+          <S.Button type="button" onClick={handleClick}>
             Buscar
           </S.Button>
         </S.Content>
