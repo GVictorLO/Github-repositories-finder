@@ -5,14 +5,21 @@ export const HomeContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
 `;
 
 export const Title = styled.h1`
   text-align: center;
   font-size: 2rem;
   font-family: sans-serif;
-  color: #333;
+  color: white;
+`;
+
+export const Subtitle = styled.h2`
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  color: white;
 `;
 
 export const Content = styled.div`
@@ -24,7 +31,7 @@ export const Content = styled.div`
 
 export const Input = styled.input`
   border: 2px solid #ddd;
-  height: 3rem;
+  height: 2.8rem;
   padding: 0 0.5rem;
   border-radius: 0.5rem 0 0 0.5rem;
 
@@ -38,10 +45,9 @@ export const Input = styled.input`
 export const Button = styled.button`
   height: 3.3rem;
   border: 2px solid #000;
-  background: green;
+  background-color: #238636;
   color: #fff;
   border-radius: 0 0.5rem 0.5rem 0;
-
   &:focus,
   &:active {
     outline: none;

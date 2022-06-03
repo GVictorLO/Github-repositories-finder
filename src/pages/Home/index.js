@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import * as S from "./styled";
 import { useNavigate } from "react-router-dom";
-import LogoSrc from "./LogoGitHub.png";
+import LogoSrc from "./github-logo-background.jpg.webp";
 
 function HomeApp() {
   const navigate = useNavigate();
@@ -29,6 +29,16 @@ function HomeApp() {
       .catch((err) => {
         setErro(true);
       });
+
+    localStorage.setItem("usuarioName", usuario);
+
+    axios
+      .get(`https://avatars.githubusercontent.com/${usuario}/2?v=4`)
+      .then((response) => {
+        const fotoUsuario = response.data;
+
+        localStorage.setItem("fotoUsuairo", fotoUsuario);
+      });
   }
 
   return (
@@ -36,7 +46,9 @@ function HomeApp() {
       <S.Title>Bem vindo ao buscador de repositórios no Github</S.Title>
       <S.HomeContainer>
         <S.HomeLogo src={LogoSrc} />
-        <h2>Digite o nome de usuario que deseja ver os repositórios</h2>
+        <S.Subtitle>
+          Digite o nome de usuario que deseja ver os repositórios
+        </S.Subtitle>
         <S.Content>
           <S.Input
             className="usuario"
