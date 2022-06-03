@@ -18,7 +18,7 @@ export const SubTitle = styled.h1`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-family: sans-serif;
   color: white;
   width: 300px;
@@ -59,13 +59,13 @@ export const PerfilContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 210px;
+  height: 250px;
   width: 1000px;
 `;
 
 export const ImgPerfil = styled.img`
-  width: 362px;
-  aspect-ratio: auto 362 / 204;
-  height: 204px;
+  aspect-ratio: auto;
+  height: 250px;
   border: 2px solid #;
+  border-radius: 50%;
 `;
